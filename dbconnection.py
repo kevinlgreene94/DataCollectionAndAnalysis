@@ -16,11 +16,11 @@ app.config.update(
 def dbConnect():
     try:
         conn = mariadb.connect(
-            user="admin",
-            password="1234",
-            host="127.0.0.1",
+            user="USERNAME",
+            password="PASSWORD",
+            host="SERVER_IP",
             port=3306,
-            database="SWDV_DATABASE"
+            database="DATABASE_NAME"
 
         )
     except mariadb.Error as e:
