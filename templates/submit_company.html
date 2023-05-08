@@ -1,0 +1,8 @@
+<p class="header">{{ company_name }}</p>
+<p class="subheader">{{ add_street }}. {{ add_state }} {{ add_zip }}</p>
+<ul class="pills">
+  <li>{{cmp_size}} Employees</li>
+  <li>{{area}}</li>
+  {% if hire2year != "unknown" %}<li>Hire 2 Year?: {{hire2year}}</li>{% endif %}
+  {% if intern != "unknown" %}<li>Internship? {{intern}}</li>{% endif %}
+</ul>

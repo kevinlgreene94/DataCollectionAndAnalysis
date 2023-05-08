@@ -1,0 +1,59 @@
+<form method="POST" action="/submit_company" class="componentForm">
+
+    <div class="input row">
+        <label for="company_name_input" class="mb-2">Company Name: </label>
+        <input type="text" name="company_name_input" required><br>
+    </div>
+
+    <div class="input row">
+        <label for="add_street" class="mb-2">Street: </label>
+        <input type="text" name="add_street" required><br>
+    </div>
+
+    <div class="input row">
+        <label for="add_state" class="mb-2">State: </label>
+        <select id="add_state" name="add_state">
+            {% for item in state_apprevs %}
+            <option value="{{ item }}" {{"selected" if item=='ID'}}>{{ item|upper }}</option>
+            {% endfor %}
+        </select>
+        <!-- <input type="text" name="add_state" required><br> -->
+    </div>
+
+    <div class="input row">
+        <label for="add_zip" class="mb-2">Zip: </label>
+        <input type="text" name="add_zip" required><br>
+    </div>
+    <div class="input row">
+        <label for="cmp_size" class="mb-2">Company Size: </label>
+        <input type="text" name="cmp_size" required><br>
+    </div>
+
+    <div class="input row">
+        <label for="cmp_area" class="mb-2">Company Area: </label>
+        <select id="cmp_area" name="cmp_area">
+            {% for item in cmp_areas %}
+            <option value="{{ item }}">{{ item|upper }}</option>
+            {% endfor %}
+        </select><br>
+    </div>
+
+    <div class="input row">
+        <label for="hire2year" class="mb-2">Hire 2 Year?: </label>
+        <select id="hire2year" name="hire2year">
+            <option value="yes">Yes</option>
+            <option value='no'>No</option>
+            <option value='unknown'>Unknown</option>
+        </select><br>
+    </div>
+
+    <div class="input row">
+        <label for="intern" class="mb-2">Internship?: </label>
+        <select id="intern" name="intern">
+            <option value="yes">Yes</option>
+            <option value='no'>No</option>
+            <option value='unknown'>Unknown</option>
+        </select><br>
+    </div>
+
+</form>

@@ -1,0 +1,49 @@
+<form method="POST" action="/submit_company_tech" class="componentForm">
+    <div class="input row w-75">
+        <label for="tech_area" class="mb-2">Tech Area: </label>
+        <select id="tech_area" name="tech_area">
+            {% for item in db_techs %}
+            <option value="{{ item[0] }}">{{ item[1]|upper|replace("_", " ") }}({{ item[2]|upper|replace("_", " ") }})</option>
+            {% endfor %}
+        </select><br>
+    </div>
+
+    <div class="input row">
+        <label for="used_now" class="mb-2">Is it used now?: </label>
+        <select id="used_now" name="used_now">
+            <option value="yes">Yes</option>
+            <option value='no'>No</option>
+            <option value='unknown'>Unknown</option>
+        </select><br>
+    </div>
+
+    <div class="input row">
+        <label for="should_teach" class="mb-2">Should We Teach?: </label>
+        <select id="should_teach" name="should_teach">
+            <option value="yes">Yes</option>
+            <option value='no'>No</option>
+            <option value='unknown'>Unknown</option>
+        </select><br>
+    </div>
+
+    <div class="input row">
+        <label for="top_three" class="mb-2">Is it top three?: </label>
+        <select id="top_three" name="top_three">
+            <option value="yes">Yes</option>
+            <option value='no'>No</option>
+            <option value='unknown'>Unknown</option>
+        </select><br>
+    </div>
+
+    <div class="input row">
+        <label for="continue" class="mb-2">Continue?: </label>
+        <select id="continue" name="continue">
+            <option value="yes">Yes</option>
+            <option value='no'>No</option>
+            <option value='unknown'>Unknown</option>
+        </select><br>
+    </div>
+
+    <input type="hidden" name="company_id" value="{{ company_id }}">
+
+</form>

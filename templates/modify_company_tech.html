@@ -1,0 +1,57 @@
+<form method="POST" action="/modified_ct" class="componentForm">
+
+    <div class="input row modified">
+        <label for="ct_techid" class="mb-2">Tech: </label>
+            <select id="ct_techid" name="ct_techid">
+                {% for item in db_techs %}
+                <option value="{{ item[0] }}" {{"selected" if item[2] == prev_tech_name}}>{{ item[2]|upper|replace("_", " ") }} ({{ item[1]|upper|replace("_", " ") }})</option>
+                {% endfor %}
+            </select><br>
+        </div>
+
+    <div class="input row">
+        <label for="company_name" class="mb-2">Company Name: </label>
+        <input type="text" name="company_name" disabled value="{{ data['company_name'] }}"><br>
+    </div>
+
+    <div class="input row modified">
+        <label for="used_now" class="mb-2">Is it used now?: </label>
+        <select id="used_now" name="used_now">
+            <option value="yes" {{"selected" if data["ct_usednow"] == "yes"}}>Yes</option>
+            <option value='no' {{"selected" if data["ct_usednow"] == "no"}}>No</option>
+            <option value='unknown' {{"selected" if data["ct_usednow"] == "unknown"}}>Unknown</option>
+        </select><br>
+    </div>
+
+    <div class="input row modified">
+        <label for="should_teach" class="mb-2">Should We Teach?: </label>
+        <select id="should_teach" name="should_teach">
+            <option value="yes" {{"selected" if data["ct_shouldteach"] == "yes"}}>Yes</option>
+            <option value='no' {{"selected" if data["ct_shouldteach"] == "no"}}>No</option>
+            <option value='unknown' {{"selected" if data["ct_shouldteach"] == "unknown"}}>Unknown</option>
+        </select><br>
+    </div>
+
+    <div class="input row modified">
+        <label for="top_three" class="mb-2">Is it top three?: </label>
+        <select id="top_three" name="top_three">
+            <option value="yes" {{"selected" if data["ct_topthree"] == "yes"}}>Yes</option>
+            <option value='no' {{"selected" if data["ct_topthree"] == "no"}}>No</option>
+            <option value='unknown' {{"selected" if data["ct_topthree"] == "unknown"}}>Unknown</option>
+        </select><br>
+    </div>
+
+    <div class="input row modified">
+        <label for="continue" class="mb-2">Continue?: </label>
+        <select id="continue" name="continue">
+            <option value="yes" {{"selected" if data["ct_continue"] == "yes"}}>Yes</option>
+            <option value='no' {{"selected" if data["ct_continue"] == "no"}}>No</option>
+            <option value='unknown' {{"selected" if data["ct_continue"] == "unknown"}}>Unknown</option>
+        </select><br>
+    </div>
+    <input type="hidden" name="ct_id" value="{{data['ct_id']}}">
+    <input type="hidden" name="tech_name" value="{{ data['tech_name'] }}"><br>
+    <input type="hidden" name="tech_area" value="{{ data['tech_area'] }}"><br>
+    <input type="hidden" name="company_name" value="{{ data['company_id'] }}"><br>
+
+</form>

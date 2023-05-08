@@ -1,0 +1,57 @@
+<form method="POST" action="/modified_company" class="componentForm">
+    <div class="input row modified">
+        <label for="company_name_input" class="mb-2">Company Name: </label>
+        <input type="text" name="company_name_input" value="{{company_name}}" required><br>
+    </div>
+
+    <div class="input row modified">
+        <label for="add_street" class="mb-2">Street: </label>
+        <input type="text" name="add_street" value="{{add_street}}" required><br>
+    </div>
+
+    <div class="input row modified">
+        <label for="add_state" class="mb-2">State: </label>
+        <select id="add_state" name="add_state">
+            {% for item in state_apprevs %}
+            <option value="{{ item }}" {{"selected" if item == add_state}}>{{ item|upper }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="input row modified">
+        <label for="add_zip" class="mb-2">Zip: </label>
+        <input type="text" name="add_zip" value="{{add_zip}}" required><br>
+    </div>
+    <div class="input row modified">
+        <label for="cmp_size" class="mb-2">Company Size: </label>
+        <input type="text" name="cmp_size" value="{{cmp_size}}" required><br>
+    </div>
+
+    <div class="input row modified">
+        <label for="cmp_area" class="mb-2">Company Area: </label>
+        <select id="cmp_area" name="cmp_area">
+            {% for item in cmp_areas %}
+            <option value="{{ item }}">{{ item|upper }}</option>
+            {% endfor %}
+        </select><br>
+    </div>
+
+    <div class="input row modified">
+        <label for="hire2year" class="mb-2">Hire 2 Year?: </label>
+        <select id="hire2year" name="hire2year">
+            <option value="yes" {{"selected" if hire2year == "yes"}}>Yes</option>
+            <option value='no' {{"selected" if hire2year == "no"}}>No</option>
+            <option value='unknown' {{"selected" if hire2year == "unknown"}}>Unknown</option>
+        </select><br>
+    </div>
+
+    <div class="input row modified">
+        <label for="intern" class="mb-2">Internship?: </label>
+        <select id="intern" name="intern">
+            <option value="yes" {{"selected" if intern == "yes"}}>Yes</option>
+            <option value='no' {{"selected" if intern == "no"}}>No</option>
+            <option value='unknown' {{"selected" if intern == "unknown"}}>Unknown</option>
+        </select><br>
+    </div>
+    <input type="hidden" name="company_id" value="{{company_id}}">
+</form>

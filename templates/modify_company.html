@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DB Form</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="infoBubble titleBar">
+        <h1>Data Project</h1>
+        <a class='button' href="{{ url_for('index') }}">Home</a>
+    </div>
+
+    <div class="p-4">
+        <header class="justify-content-center mb-3 d-flex">
+            <h1><b>Modify Company</b></h1>
+        </header>
+        <section> <!-- class="row row-cols-2 row-cols-lg-4 justify-content-center" -->
+            <!--------------------------------MODIFY COMPANY FORM------------------------------------------>
+            <form method="POST" action="/modified_company" class="infoBubble col p-5">
+                <h2>Company</h2>
+    
+                <div class="input row modified">
+                    <label for="company_name_input" class="mb-2">Company Name: </label>
+                    <input type="text" name="company_name_input" value="{{company_name}}" required><br>
+                </div>
+    
+                <div class="input row modified">
+                    <label for="add_street" class="mb-2">Street: </label>
+                    <input type="text" name="add_street" value="{{add_street}}" required><br>
+                </div>
+    
+                <div class="input row modified">
+                    <label for="add_state" class="mb-2">State: </label>
+                    <select id="add_state" name="add_state">
+                        {% for item in state_apprevs %}
+                        <option value="{{ item }}" {{"selected" if item == add_state}}>{{ item|upper }}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- <input type="text" name="add_state" required><br> -->
+                </div>
+    
+                <div class="input row modified">
+                    <label for="add_zip" class="mb-2">Zip: </label>
+                    <input type="text" name="add_zip" value="{{add_zip}}" required><br>
+                </div>
+                <div class="input row modified">
+                    <label for="cmp_size" class="mb-2">Company Size: </label>
+                    <input type="text" name="cmp_size" value="{{cmp_size}}" required><br>
+                </div>
+    
+                <div class="input row modified">
+                    <label for="cmp_area" class="mb-2">Company Area: </label>
+                    <select id="cmp_area" name="cmp_area">
+                        {% for item in cmp_areas %}
+                        <option value="{{ item }}">{{ item|upper }}</option>
+                        {% endfor %}
+                    </select><br>
+                </div>
+    
+                <div class="input row modified">
+                    <label for="hire2year" class="mb-2">Hire 2 Year?: </label>
+                    <select id="hire2year" name="hire2year">
+                        <option value="yes" {{"selected" if hire2year == "yes"}}>Yes</option>
+                        <option value='no' {{"selected" if hire2year == "no"}}>No</option>
+                        <option value='unknown' {{"selected" if hire2year == "unknown"}}>Unknown</option>
+                    </select><br>
+                </div>
+    
+                <div class="input row modified">
+                    <label for="intern" class="mb-2">Internship?: </label>
+                    <select id="intern" name="intern">
+                        <option value="yes" {{"selected" if intern == "yes"}}>Yes</option>
+                        <option value='no' {{"selected" if intern == "no"}}>No</option>
+                        <option value='unknown' {{"selected" if intern == "unknown"}}>Unknown</option>
+                    </select><br>
+                </div>
+                <input type="hidden" name="company_id" value="{{company_id}}">
+                <input class="button" type="submit" value="Submit">
+    
+            </form>
+        </section>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+
+</html>

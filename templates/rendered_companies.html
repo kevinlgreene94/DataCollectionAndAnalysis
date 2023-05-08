@@ -1,0 +1,17 @@
+<div class="row row-cols-2 row-cols-lg-5">
+    <div id="newCompany" class="infoBubble col" data-bs-toggle="modal" data-bs-target="#newCompanyModal">
+        <p class="header">Add Company</p>
+    </div>
+    {% for row in data %}
+    <div class="infoBubble col companyCard" data-dbid="{{row[0]}}">
+        <p class="header">{{ row[1] }}</p>
+        <p class="subheader">{{ row[2] }}. {{ row[3] }} {{row[4]}}</p>
+        <ul class="pills">
+            <li>{{row[5]}} Employees</li>
+            <li>{{row[6]}}</li>
+            {% if row[7] != "unknown" %}<li>Hire 2 Year?: {{row[7]}}</li>{% endif %}
+            {% if row[8] != "unknown" %}<li>Internship? {{row[8]}}</li>{% endif %}
+        </ul>
+    </div>
+    {% endfor %}
+</div>

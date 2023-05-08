@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --primary-color: #0f1629;
+    --accent-color: #161c30;
+  }
+
+/* Main Page Styles */
+
+header {
+  background-color: #161c30;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+
+header img {
+  max-height: 100px;
+}
+  
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+body{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+
+nav {
+  background-color: #161c30;
+  height: fit-content;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+nav li {
+  list-style: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 0.9rem;
+  padding: 1rem 2rem;
+}
+
+nav li:hover {
+  background-color: rgba(255,255,255,0.1);
+  cursor: pointer;
+}
+
+nav li.active{
+  background-color: rgba(255,255,255,0.1);
+  border-bottom: .33rem solid rgba(255,255,0,.3);
+}
+
+/* Side Menu with Company Details */
+
+aside {
+  box-shadow: rgba(9, 140, 140, 0.2) 0px 13px 27px -5px;
+  width: 35%;
+  min-height: 100vh;
+  height: fit-content;
+  padding: 1rem;
+  padding-top: 1.5rem;
+  border-left: 1px solid #e8e8e8f7;
+  position: absolute;
+  right: -35%;
+  background-color: #ffffffc9;
+  transition: all 300ms ease-in-out;
+  backdrop-filter: blur(12px);
+}
+
+aside.opened {
+  right: 0;
+}
+
+#sidebar-tech-details {
+  overflow-x: scroll;
+}
+
+#sidebar_company-edit, #sidebar_contact-edit, .editIcon{
+  background-image: url(../assets/edit.svg);
+}
+
+.deleteIcon{
+  background-image: url(../assets/slash.svg);
+}
+
+.sidebar-icon {
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 2rem;
+}
+
+.generic-icon{
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  border: none;
+  background-color: transparent;
+}
+
+.close {
+  background-image: url(../assets/x.svg);
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  border: none;
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  background-color: transparent;
+}
+
+aside section {
+  display: block;
+  padding: 1.5rem 1.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  margin-top: 1rem;
+  border-radius: .3rem;
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: Roboto;
+  color: rgba(0,50,100,0.4);
+  font-weight: 900;
+}
+
+aside .header {
+  margin-bottom: 0;
+}
+
+aside .subheader {
+  color: rgba(0,0,50,0.5);
+  font-weight: 700;
+  font-family: Roboto;
+}
+
+ol {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  /* grid-column-gap: .5rem; */
+  font-family: Roboto;
+}
+
+ol li {
+  padding: .3rem .5rem;
+}
+
+.table-row li:first-of-type {
+  font-weight: 900;row-cols-2 row-cols-lg-5row-cols-2 row-cols-lg-5
+}
+
+.no-padding {
+  padding: 0;
+  width: max-content;
+}
+
+ol .table-head > li {
+  background-color: #00BA31;
+  color: white;
+  font-weight: 700;
+}
+
+ol .table-head, ol .table-row {
+  display: contents;
+}
+
+.newBox {
+  border: .25rem dashed #004F5940;
+  color: #004F5940;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms ease-in-out;
+  margin: 1rem 0rem;
+  min-height: 6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.newBox:hover {
+  cursor: pointer;
+  border-color: #004F5975;
+  color: #004F5975;
+}
+
+#createNewTech {
+  min-height: fit-content;
+}
+
+
+/* Component Form Styles */
+
+.row.full {
+  grid-column: 1/-1;
+}
+
+.componentForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* General Form Styles */
+
+ul.pills .color-no {
+  background-color: #ff6000;
+}
+
+.notes {
+  margin-top: 1rem;
+  resize: both;
+  min-width: 30rem;
+  max-width: none;
+  min-height: 10rem;
+}
+
+/* Pill Colors */
+.pills .colorbar-banking {
+  background-color: #dd4535;
+}
+.pills .colorbar-technology {
+  background-color: #35b6dd;
+}
+.pills .colorbar-healthcare {
+  background-color: #c835dd;
+}
+.pills .colorbar-manufacturing {
+  background-color: #35dd57;
+}
+.pills .colorbar-investments {
+  background-color: #d2dd35;
+}
+.pills .colorbar-marketing {
+  background-color: #358cdd;
+}
+.pills .colorbar-architechture {
+  background-color: #dd3583;
+}
+.pills .colorbar-education {
+  background-color: #9ddd35;
+}
+.pills .colorbar-government {
+  background-color: #dda835;
+}
+.pills .colorbar-grocery {
+  background-color: #dd3551;
+}
+
+ul.pills {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: .25rem;
+  white-space: nowrap;
+  margin: 0;
+}
+
+ul.pills li {
+  background-color: #a1bdbd;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: min-content;
+  border-radius: 5rem;
+  padding: .15rem .75rem;
+}
+
+ul li {
+  list-style: none;
+  font-family: Roboto;
+}
+
+.companyCard:hover{
+  cursor: pointer;
+}
+
+.header {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.subheader {
+  color: rgba(0,0,50,0.5);
+  font-weight: 700;
+  font-family: Roboto;
+}
+
+select > option > * {
+  background-color: white;
+}
+
+h1, h2 {
+    font-family: 'Roboto Slab', serif;
+    display: block;
+    width: auto;
+    /* min-width: 50rem; */
+    margin: .5rem;
+}
+
+.infoBubble {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: .75rem;
+  background-color: white;
+  box-shadow: rgba(0, 40, 35, 0.61) 0px 3px 8px;
+  border-top: 1.5rem solid var(--primary-color);
+  max-width: 60%;
+  margin: 1rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 20rem;
+}
+
+#newCompany {
+  border: .5rem dashed #004F5940;
+  box-shadow: none;
+  background-color: rgba(0, 155, 126, 0.09);
+  color: #004F5940;
+  background-image: url('../assets/plus-square.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: invert(0.1);
+  transition: all 300ms ease-in-out;
+}
+
+#newCompany:hover {
+  cursor: pointer;
+  border-color: #004F5975;
+  color: #004F5975;
+}
+
+.titleBar {
+    width: auto;
+    margin: 0;
+    max-width: none;
+    border-top: none;
+    border-radius: 0;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  padding: 10px;
+  color: rgba(0,0,0,0.7);
+  text-transform: uppercase;
+  margin: .25rem;
+  width: fit-content;
+  border-radius: .25rem;
+}
+
+input[type="text"], select, textarea {
+    padding: .5rem;
+    border: none;
+    background: none;
+    max-width: 20rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: .25rem;
+}
+
+.modified input, .modified select{
+  background-color: rgba(255, 191, 0, 0.23);
+}
+
+input[type="text"]:hover, select:hover, textarea:hover {
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 3px 3px, rgba(0, 0, 0, 0.64) 0px 1px 2px;
+}
+
+select{
+    min-width: 5rem;
+}
+
+.button {
+    font-size: 16px;
+    margin: 4px 2px;
+    border: none;
+    border-radius: 0.5rem;
+    max-height: 3rem;
+    background: var(--accent-color);
+    color: white;
+    padding: .5rem 2.5rem;
+    font-weight: 700;
+    transition: color .3s ease-out;
+}
+
+.button:hover{
+    cursor: pointer;
+    background: none;
+    color: var(--accent-color);
+    outline: .15rem solid var(--accent-color);
+    outline-offset: -.15rem;
+}
+
+a.button{
+    text-decoration: none;
+}
+
+.graph{
+  width: 500px;
+  border-radius: .75rem;
+  background-color: white;
+  box-shadow: rgba(0, 40, 35, 0.61) 0px 3px 8px;
+  border-top: 1.5rem solid var(--primary-color);
+}
+

@@ -1,0 +1,43 @@
+<form method="POST" action="/submit_contact" class="componentForm">
+
+    <div class="input row">
+        <label for="contact_first" class="mb-2">First Name</label>
+        <input type="text" name="contact_first" required><br>
+    </div>
+
+    <div class="input row">
+        <label for="contact_last" class="mb-2">Last Name</label>
+        <input type="text" name="contact_last" required><br>
+    </div>
+
+    <div class="input row">
+        <label for="contact_area" class="mb-2">Area of Employment: </label>
+        <select id="contact_area" name="contact_area">
+            {% for item in contact_areas %}
+            <option value="{{ item }}">{{ item|upper }}</option>
+            {% endfor %}
+        </select><br>
+    </div>
+    <div class="input row">
+        <label for="contact_phone" class="mb-2">Phone Number: </label>
+        <input type="text" name="contact_phone" required><br>
+    </div>
+
+    <div class="input row">
+        <label for="contact_future" class="mb-2">Can we contact in the future?: </label>
+        <select id="contact_future" name="contact_future">
+            <option value="1">True</option>
+            <option value='0'>False</option>
+        </select><br>
+    </div>
+
+    <div class="input row"></div>
+
+    <div class="input row">
+        <label for="contact_notes" class="mb-2">Notes: </label>
+        <textarea name="contact_notes" id="contact_notes" cols="30" rows="10"></textarea>
+    </div>
+
+    <input type="hidden" name="company_id" value="{{ company_id }}">
+
+</form>
