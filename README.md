@@ -1,5 +1,5 @@
 # Before Run
-1. Use CREATE_DATABASE.sql and update database name if desired.
+1. Connect and run CREATE_DATABASE.sql within a MariaDB server.
 2. Change connection settings in dbconnection.py dbConnect().
 
 # Install & Run
