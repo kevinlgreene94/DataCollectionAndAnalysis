@@ -1,5 +1,6 @@
-# Data Collect
-SWDV data collection effort
+# Before Run
+1. Use CREATE_DATABASE.sql and update database name if desired.
+2. Change connection settings in dbconnection.py dbConnect().
 
 # Install & Run
 
